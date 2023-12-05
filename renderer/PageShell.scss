@@ -1,0 +1,116 @@
+/* This CSS is common to all pages */
+//  Font faces
+@font-face {
+  font-family: LogoFont; // Give a name to your font
+  src: url('/assets/fonts/outward-cufonfonts/outward-block.ttf') // Specify the path to your font file
+}
+
+@font-face {
+  font-family: MainFont; // Give a name to your font
+  src: url('/assets/fonts/Roboto/Roboto-Regular.ttf') // Specify the path to your font file
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  padding: 0;
+  background-color: rgb(236, 236, 236);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  font-family: MainFont, sans-serif;
+  color: black;
+}
+
+h1,
+p {
+  color: black;
+}
+
+.navbar {
+  gap: 16px;
+  box-shadow: 3px 4px 0px 0px #4e57ef;
+
+  .logo {
+    position: absolute;
+    left: 140px;
+    margin: 0 auto;
+    font-family: LogoFont, sans-serif;
+    font-size: 80px;
+    color: #18181d;
+
+    @media only screen and (max-width: 768px) {
+      display: none;
+      visibility: hidden;
+
+    }
+
+    @media only screen and (max-width: 480px) {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  a.logo-right{
+    position: absolute;
+    right: 140px;
+    margin: 0 auto;
+    img{
+      width: 60px;
+    }
+    @media only screen and (max-width: 768px) {
+     right: 10px;
+
+    }
+
+    @media only screen and (max-width: 480px) {
+     right: 10px;
+    }
+  }
+
+  a.logo-right-2{
+    position: absolute;
+    right: 215px;
+    margin: 0 auto;
+    width: 72px;
+    img{
+      width: 72px;
+    }
+    @media only screen and (max-width: 768px) {
+     left: 10px;
+     margin: 0;
+
+    }
+
+    @media only screen and (max-width: 480px) {
+      left: 10px;
+      margin:0;
+    }
+  }
+
+  .navitem {
+    padding: 18px 18px;
+    color: black;
+    font-family: MainFont, sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+
+    &:hover {
+      box-shadow: rgba(149, 157, 165, 0.15) 0px 3px 6px 0px
+    }
+  }
+
+  .navitem.is-active {
+    color: black;
+    box-shadow: rgba(149, 157, 165, 0.15) 0px 3px 6px 0px;
+    letter-spacing: 1.5px;
+    text-decoration: underline;
+    border: none;
+    outline: none;
+  }
+}

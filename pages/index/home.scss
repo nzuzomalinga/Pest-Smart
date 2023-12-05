@@ -1,0 +1,372 @@
+.content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    overflow-x: hidden;
+    margin: 0 0 78px 0;
+
+    .greeting {
+        padding: 46px 48px 0 0;
+
+        .introduction {
+            font-size: 28px;
+            font-family: MainFont, sans-serif;
+            opacity: 0;
+            margin: 0 0 14px 0;
+            animation: 1s ease-out 0.1s 1 slideInFromLeft;
+            animation-fill-mode: forwards;
+        }
+
+        .name {
+            font-family: MainFont, sans-serif;
+            font-size: 64px;
+            margin: 0;
+            opacity: 0;
+            animation: 1s ease-out .5s 1 slideInFromLeft;
+            animation-fill-mode: forwards;
+        }
+
+        .job-title {
+            font-family: MainFont, sans-serif;
+            font-size: 28px;
+            margin: 0;
+            opacity: 0;
+            animation: 1s ease-out 0.1s 1 slideInFromLeft;
+            animation-fill-mode: forwards;
+        }
+
+        .job-description {
+            font-family: MainFont, sans-serif;
+            font-size: 20px;
+            padding: 100px 0 0 0;
+            margin: 0;
+            opacity: 0;
+            animation: 1s ease-out 0.1s 1 slideInFromLeft;
+            animation-fill-mode: forwards;
+        }
+
+        @media only screen and (max-width: 768px) {
+            margin: 0 auto;
+            text-align: center;
+            width: 100%;
+            padding: 46px 20px 0 20px;
+            .introduction {
+                font-size: 28px;
+                font-family: MainFont, sans-serif;
+                opacity: 1;
+                animation: none;
+            }
+
+            .name {
+                font-family: MainFont, sans-serif;
+                font-size: 64px;
+                margin: 0;
+                opacity: 1;
+                animation: none;
+
+            }
+
+            .job-title {
+                font-family: MainFont, sans-serif;
+                font-size: 28px;
+                margin: 0;
+                opacity: 1;
+                animation: none;
+            }
+
+            .job-description {
+                font-family: MainFont, sans-serif;
+                font-size: 20px;
+                text-align: center;
+                padding: 0;
+                margin: 0;
+                opacity: 1;
+                animation: none;
+            }
+
+
+        }
+
+        @media only screen and (max-width: 480px) {
+            margin: 0 auto;
+            text-align: center;
+            width: 100%;
+            padding: 46px 20px 0 20px;
+            .introduction {
+                font-size: 28px;
+                font-family: MainFont, sans-serif;
+                opacity: 1;
+                animation: none;
+            }
+
+            .name {
+                font-family: MainFont, sans-serif;
+                font-size: 64px;
+                margin: 0;
+                opacity: 1;
+                animation: none;
+
+            }
+
+            .job-title {
+                font-family: MainFont, sans-serif;
+                font-size: 28px;
+                margin: 0;
+                opacity: 1;
+                animation: none;
+            }
+
+            .job-description {
+                font-family: MainFont, sans-serif;
+                font-size: 20px;
+                padding: 0;
+                margin: 0;
+                opacity: 1;
+                animation: none;
+            }
+
+        }
+    }
+
+    .photo-container {
+        max-width: 600px;
+        max-height: 280px;
+        margin: 46px 0 0 0;
+        overflow: hidden;
+        background-color: rgb(42, 23, 57);
+        border-radius: 5px;
+        box-shadow: -10px -8px 0px rgb(167 243 208);
+        opacity: 0;
+        animation: 2s ease-out .5s 1 slideInFromRight, glow 15s ease-out infinite;
+        animation-fill-mode: forwards;
+
+        img {
+            width: 100%;
+            height: auto;
+            transform: rotate(36deg) translateX(40px);
+            padding: 50px 50px 0 0;
+            border-radius: 50%;
+        }
+
+        @media only screen and (max-width: 768px) {
+            display: none;
+            visibility: none;
+
+        }
+
+        @media only screen and (max-width: 480px) {
+            display: none;
+            visibility: none;
+        }
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(140px);
+
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(200%);
+        opacity: 0;
+        max-height: 100px;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(calc(100% - (600px + 140px)));
+
+        max-height: 300px;
+        overflow-x: hidden;
+    }
+}
+
+@keyframes glow {
+    0% {
+
+
+        background-color: #a0ff1b79;
+
+    }
+
+    100% {
+        background-color: #a0ff1b79;
+    }
+}
+
+.call-to-action {
+
+    opacity: 0;
+    animation: 0.5s ease-out 0.1s 1 slideInFromLeft;
+    animation-fill-mode: forwards;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 280px);
+    justify-content: space-between;
+    margin: 0 15px 15px 0;
+    gap: 24px;
+
+    a {
+
+        font-family: MainFont, sans-serif;
+        padding: 10px;
+        font-size: 20px;
+        border: 0px solid white;
+        color: #18171b;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+
+        &:hover {
+            cursor: pointer;
+            color: white;
+            background-color: #5E3BEE;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        animation: none;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+        width: 90%;
+
+    }
+
+    @media only screen and (max-width: 480px) {
+        animation: none;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+        width: 90%;
+    }
+}
+
+.service-descriptions {
+    opacity: 0;
+    width: calc(100% - 140px);
+    animation: 2s ease-out .5s 1 slideInFromLeft;
+    animation-fill-mode: forwards;
+    overflow-x: hidden;
+    border-radius: 10px;
+    margin: 46px 140px 86px 0;
+    width: calc(100% - 280px);
+    padding: 36px 46px 72px 24px;
+    background-color: #a0ff1b79;
+    box-shadow: 0 3.2px 7.2px 0 rgb(0 0 0 / 13%), 0 0.6px 1.8px 0 rgb(0 0 0 / 11%);
+
+    h2 {
+        position: relative;
+
+        img {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 60px;
+
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        width: 90%;
+        animation: none;
+        margin: 36px auto;
+        opacity: 1;
+
+    }
+
+    @media only screen and (max-width: 480px) {
+        width: 90%;
+        animation: none;
+        margin: 36px auto;
+        opacity: 1;
+    }
+}
+
+.work-history-title {
+    margin: 0 0 0px 140px;
+
+    @media only screen and (max-width: 768px) {
+        margin: 0 0 0 0%;
+
+        text-align: center;
+    }
+
+    @media only screen and (max-width: 480px) {
+        margin: 0 0 0 0%;
+        text-align: center;
+    }
+}
+
+.dotted-table {
+    width: 85%;
+    height: 400px;
+    /* Set your desired fixed height */
+    border-collapse: collapse;
+    margin: 0 0 0 140px;
+
+    td {
+        width: calc(85% / 3);
+        /* Each cell occupies a third of the table width */
+        text-align: center;
+        vertical-align: middle;
+
+        img {
+            max-width: calc(85% / 3);
+            /* Ensure images don't exceed the cell width */
+            height: auto;
+            display: block;
+            cursor: pointer;
+            margin: 0 auto;
+            /* Center the images horizontally */
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        tr {
+            display: flex;
+            flex-direction: column;
+
+            td {
+                width: 100%;
+
+                img {
+                    padding: 40px 0 40px 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        margin: 0;
+
+        tr {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+
+            td {
+
+                width: 100%;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    padding: 40px 0 40px 0;
+                }
+            }
+        }
+    }
+}
